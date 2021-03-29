@@ -1,0 +1,2 @@
+module FoundReportsHelper
+end

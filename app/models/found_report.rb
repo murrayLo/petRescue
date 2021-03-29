@@ -1,0 +1,2 @@
+class FoundReport < ApplicationRecord
+end
