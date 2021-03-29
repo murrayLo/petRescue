@@ -11,8 +11,6 @@
       <th>Breed</th>
       <th>Colour</th>
       <th>Image</th>
-      <th>Additionalinfo</th>
-      <th>Reporter</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,8 +24,6 @@
         <td><%= found_report.breed %></td>
         <td><%= found_report.colour %></td>
         <td><%= found_report.image %></td>
-        <td><%= found_report.additionalInfo %></td>
-        <td><%= found_report.reporter %></td>
         <td><%= link_to 'Show', found_report %></td>
         <td><%= link_to 'Edit', edit_found_report_path(found_report) %></td>
         <td><%= link_to 'Destroy', found_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
