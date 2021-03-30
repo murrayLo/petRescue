@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @lost.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @lost.location %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @lost.animal %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @lost.breed %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @lost.colour %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @lost.image %>
+</p>
+
+<p>
+  <strong>Additionalinfo:</strong>
+  <%= @lost.additionalInfo %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @lost.reporter %>
+</p>
+
+<%= link_to 'Edit', edit_lost_path(@lost) %> |
+<%= link_to 'Back', losts_path %>
