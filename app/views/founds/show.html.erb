@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @found.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @found.location %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @found.animal %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @found.breed %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @found.colour %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @found.image %>
+</p>
+
+<p>
+  <strong>Additionalinfo:</strong>
+  <%= @found.additionalInfo %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @found.reporter %>
+</p>
+
+<%= link_to 'Edit', edit_found_path(@found) %> |
+<%= link_to 'Back', founds_path %>

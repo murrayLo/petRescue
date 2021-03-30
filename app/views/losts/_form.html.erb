@@ -1,0 +1,20 @@
+
+<%= simple_form_for(@lost) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :date %>
+    <%= f.input :location %>
+    <%= f.input :animal %>
+    <%= f.input :breed %>
+    <%= f.input :colour %>
+    <%= f.input :image %>
+    <%= f.input :additionalInfo %>
+    <%= f.input :reporter %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

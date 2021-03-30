@@ -1,2 +1,0 @@
-class LostReport < ApplicationRecord
-end
