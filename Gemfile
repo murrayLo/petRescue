@@ -25,12 +25,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'bootstrap', '~> 5.0.0.beta2' #gemfile for bootstrap styling
+gem 'bootstrap', '~> 5.0.0.beta2' #gem for bootstrap styling
 gem 'jquery-rails'
 gem 'bootstrap-sass-extras'
-gem 'simple_form', '~> 5.1' #gemfile for simple form styling
-gem 'devise', '~> 4.7', '>= 4.7.3' #gemfile for devise user auth
+gem 'simple_form', '~> 5.1' #gem for simple form styling
+gem 'devise', '~> 4.7', '>= 4.7.3' #gem for devise user auth
 
+gem "shrine", "~> 3.3" #gem for file uploads (pet images)
+gem 'image_processing', '~> 1.12', '>= 1.12.1' #gem for specifiying dimensions of image uploads
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

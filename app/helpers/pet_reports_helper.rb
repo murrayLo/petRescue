@@ -1,0 +1,2 @@
+module PetReportsHelper
+end

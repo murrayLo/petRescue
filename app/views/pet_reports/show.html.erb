@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reported:</strong>
+  <%= @pet_report.reporting %>
+</p>
+
+<p>
+  <strong>Date Reported:</strong>
+  <%= @pet_report.date %>
+</p>
+
+<p>
+  <strong>Last Seen:</strong>
+  <%= @pet_report.location %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @pet_report.animal %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @pet_report.breed %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @pet_report.colour %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @pet_report.image_url if @pet_report.image %>
+</p>
+
+<p>
+  <strong>Additional Info:</strong>
+  <%= @pet_report.additionalInfo %>
+</p>
+
+<p>
+  <strong>Reported By:</strong>
+  <%= @pet_report.reportedBy %>
+</p>
+
+<%= link_to 'Back', pet_reports_path, class:"btn btn-primary" %>
+<%= link_to 'Edit', edit_pet_report_path(@pet_report), class:"btn btn-primary"  %>
+<%= link_to 'Delete', @pet_report, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
+
