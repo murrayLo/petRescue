@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reporting: MyString
+  date: 2021-04-03 11:27:48
+  location: MyString
+  animal: MyString
+  breed: MyString
+  colour: MyString
+  image_data: MyText
+  additionalInfo: MyText
+  reportedBy: MyString
+
+two:
+  reporting: MyString
+  date: 2021-04-03 11:27:48
+  location: MyString
+  animal: MyString
+  breed: MyString
+  colour: MyString
+  image_data: MyText
+  additionalInfo: MyText
+  reportedBy: MyString

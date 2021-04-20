@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@pet_report) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :reporting, :collection => %w[Missing Found Stolen] %>
+    <%= f.input :date %>
+    <%= f.input :location %>
+    <%= f.input :animal, :collection => %w[Dog Cat] %>
+    <%= f.input :breed %>
+    <%= f.input :colour %>
+    <%= f.hidden_field :image, value: @pet_report.cached_image_data %>
+    <%= f.file_field :image %>
+    <p></p>
+    <%= f.input :additionalInfo, label:'Additional Info' %>
+    <%= f.input :reportedBy, label:'Reported By' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
+<% end %>
