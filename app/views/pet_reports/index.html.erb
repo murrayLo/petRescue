@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
 <!--<h1>Pet Reports</h1>
 
@@ -29,7 +29,7 @@
         <td><%= pet_report.colour %></td>
         <td><%= image_tag pet_report.image_url %><td>
         <td><%= pet_report.additionalInfo %></td>
-        <td><%= pet_report.reportedBy %></td>
+        <td><%= pet_report.user_id %></td>
         <td><%= link_to 'Show', pet_report %></td>
         <td><%= link_to 'Edit', edit_pet_report_path(pet_report) %></td>
         <td><%= link_to 'Destroy', pet_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,7 +40,7 @@
 
 <br>
 <div style="text-align: center; padding: 5%; ">
-<%= link_to 'Report a Lost or Found Pet', new_pet_report_path, class:"btn btn-primary" %>
+<%= link_to 'Report a Lost or Found Pet', new_pet_report_path, class:"btn btn-dark" %>
 </div>
 <div style="text-align: center; ">
 <%= image_tag('mainLogo.png', style: "height: 270px; width: 270px; ") %>

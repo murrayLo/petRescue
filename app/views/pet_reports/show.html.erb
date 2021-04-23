@@ -1,5 +1,41 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+<br/>
+<div class="card mb-3">
+  <h3 class="card-header">
+  <%= @pet_report.animal %> <%= @pet_report.reporting %>
+  </h3>
+  <div class="card-body">
+    <h5 class="card-title">  
+    Location: <%= @pet_report.location %>
+    </h5>
+    <h6 class="card-subtitle text-muted">
+    <%= @pet_report.date %>
+    </h6>
+  </div>
+  <div style='margin-left:2%;'>
+  <%= image_tag @pet_report.image_url if @pet_report.image %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= @pet_report.breed %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= @pet_report.colour %></li>
+    <li class="list-group-item"><%= @pet_report.additionalInfo %></li>
+  </ul>
+  <div class="card-footer text-muted">
+    Reported by <%= @pet_report.user_id %>
+  </div>
+</div>
+<div class="card-body">
+<%= link_to 'Back', gallery_index_path, class:"btn btn-primary" %>
+<%= link_to 'Edit', edit_pet_report_path(@pet_report), class:"btn btn-primary"  %>
+<%= link_to 'Delete', @pet_report, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
+</div>
 
+
+
+
+<!--<div class="jumbotron">
 <p>
   <strong>Reported:</strong>
   <%= @pet_report.reporting %>
@@ -43,10 +79,10 @@
 
 <p>
   <strong>Reported By:</strong>
-  <%= @pet_report.reportedBy %>
+  <%= @pet_report.user_id %>
 </p>
 
 <%= link_to 'Back', pet_reports_path, class:"btn btn-primary" %>
 <%= link_to 'Edit', edit_pet_report_path(@pet_report), class:"btn btn-primary"  %>
 <%= link_to 'Delete', @pet_report, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
-
+</div>-->

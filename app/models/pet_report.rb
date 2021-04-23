@@ -1,4 +1,7 @@
 class PetReport < ApplicationRecord
+
+    belongs_to :user
+
     include ImageUploader::Attachment(:image)
 
     validates :reporting, presence: true
@@ -7,5 +10,6 @@ class PetReport < ApplicationRecord
     validates :animal, presence: true
     validates :breed, presence: true
     validates :colour, presence: true
-    validates :reportedBy, presence: true
+    validates :image, presence: true
+    validates :user_id, presence: true
 end

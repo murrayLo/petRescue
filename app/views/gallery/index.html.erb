@@ -4,9 +4,9 @@
 
 <!--if user signed in allow report, otherwise redirect to log in-->
 <% if user_signed_in? %>
-  <%= link_to 'Report a Lost or Found Pet', new_pet_report_path, class:"btn btn-primary mr-auto" %>
+  <%= link_to 'Report a Lost or Found Pet', new_pet_report_path, class:"btn btn-outline-dark mr-auto" %>
 <% else %>
-  <%= link_to 'Report a Lost or Found Pet', new_user_session_path, class:"btn btn-primary", data: { confirm: 'You must be logged in to report a lost or found pet' } %>
+  <%= link_to 'Report a Lost or Found Pet', new_user_session_path, class:"btn btn-outline-dark", data: { confirm: 'You must be logged in to report a lost or found pet' } %>
 <% end %>
 </div>
 
@@ -20,7 +20,7 @@
     <h6 class="card-subtitle text-muted"><%= pet_report.animal %>, <%= pet_report.breed %></h6>
   </div>
   <div style="text-align: center;">
-  <%= image_tag pet_report.image_url %>
+  <%= image_tag pet_report.image_url, style: "height: 270px; width: 270px" %>
   </div>
 
   <div class="card-body">
