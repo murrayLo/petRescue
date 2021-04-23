@@ -13,13 +13,19 @@
   </head>
 
   <body>
-  <div class='container'>
-    <%= render 'layouts/navbar/nav' %>
+  <!-- render the navbar partial -->
+  <%= render 'layouts/navbar/nav' %>
 
+  <div class='container', style='position: relative; min-height: 100vh; '>
+
+    <!-- bootstrap messages -->
+    <%= bootstrap_flash %>
+
+    <!-- display application within this container -->
     <%= yield %>
 
-    <!--<%= render 'layouts/footer/footer' %>-->
   </div>
+  <!--<%= render 'layouts/footer/footer' %>-->
 
   </body>
 </html>

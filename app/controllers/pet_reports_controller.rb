@@ -1,7 +1,7 @@
 class PetReportsController < ApplicationController
   before_action :set_pet_report, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: :index #Devise method to ensure user is logged in
-
+  before_action :authenticate_user!, except: :index #Devise method to ensure user is logged in, while still granting access to index
+  
   # GET /pet_reports or /pet_reports.json
   def index
     @pet_reports = PetReport.all
@@ -13,7 +13,8 @@ class PetReportsController < ApplicationController
 
   # GET /pet_reports/new
   def new
-    @pet_report = PetReport.new
+    #@pet_report = PetReport.new
+    @pet_report = current_user.pet_reports.build
   end
 
   # GET /pet_reports/1/edit
@@ -22,7 +23,8 @@ class PetReportsController < ApplicationController
 
   # POST /pet_reports or /pet_reports.json
   def create
-    @pet_report = PetReport.new(pet_report_params)
+    #@pet_report = PetReport.new(pet_report_params)
+    @pet_report = current_user.pet_reports.build(pet_report_params)
 
     respond_to do |format|
       if @pet_report.save
@@ -65,6 +67,6 @@ class PetReportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_report_params
-      params.require(:pet_report).permit(:reporting, :date, :location, :animal, :breed, :colour, :image, :additionalInfo, :reportedBy)
+      params.require(:pet_report).permit(:reporting, :date, :location, :animal, :breed, :colour, :image, :additionalInfo, :user_id)
     end
 end
