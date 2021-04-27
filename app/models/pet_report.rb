@@ -1,6 +1,7 @@
 class PetReport < ApplicationRecord
 
     belongs_to :user
+    has_many :comments
 
     include ImageUploader::Attachment(:image)
 

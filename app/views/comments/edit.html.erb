@@ -1,0 +1,9 @@
+</br>
+<h3>Edit Comment</h3>
+</br>
+<%= simple_form_for [@pet_report, @comment] do |f| %>
+
+    <%= f.input :body %>
+    <%= f.submit "Post Comment" %>
+
+<% end %>
