@@ -2,6 +2,7 @@
 <b><%= comment.username %></b>
 <%= comment.body %>
 
+<!-- if current user owns the comment, allow delete -->
 <% if comment.user_id == current_user.id %>
     <%= link_to 'Delete', [comment.pet_report, comment], method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-outline-danger" %>
 <% end %>
