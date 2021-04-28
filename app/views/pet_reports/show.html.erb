@@ -2,10 +2,10 @@
 <br/>
 
 <div class="card-body">
-  <%= link_to 'Back', pet_reports_path, class:"btn btn-primary" %>
+  <%= link_to 'Back', gallery_index_path, class:"btn btn-outline-dark" %>
   <!-- if the current user is the reporter, allow edit and delete -->
   <% if @pet_report.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_pet_report_path(@pet_report), class:"btn btn-primary"  %>
+    <%= link_to 'Edit', edit_pet_report_path(@pet_report), class:"btn btn-outline-dark"  %>
     <%= link_to 'Delete', @pet_report, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
   <% end %>
 </div>
@@ -32,22 +32,23 @@
   </div>
 
   <div class="card-body">
-    <p class="card-text"><%= @pet_report.breed %></p>
+    <p class="card-text"><%= @pet_report.additionalInfo %></p>
   </div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @pet_report.colour %></li>
-    <li class="list-group-item"><%= @pet_report.additionalInfo %></li>
+    <li class="list-group-item">Breed: <%= @pet_report.breed %></li>
+    <li class="list-group-item">Colour: <%= @pet_report.colour %></li>
+    <li class="list-group-item">Reported By: <%= @pet_report.user.username %></li>
   </ul>
 
-  <div class="card-footer text-muted">
-    <p>Add Comment:</p>
-    <%= render 'comments/form' %>
-  </div>
+</div>
 
+<div class="card-footer text-muted">
   <p>
-  <H4>Comments</H4>
-  <%= render @pet_report.comments %>
+    <H4>Comments</H4>
+    <%= render @pet_report.comments %>
   </p>
-
+</div>
+<div class="card-footer text-muted">
+  <%= render 'comments/form' %>
 </div>
