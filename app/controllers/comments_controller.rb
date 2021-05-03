@@ -2,12 +2,13 @@ class CommentsController < ApplicationController
 before_action :authenticate_user!
 
 def create
-    @pet_report = PetReport.find(params[:pet_report_id]) #find pet report
+    @pet_report = PetReport.find(params[:pet_report_id]) # find pet report
     @comment = @pet_report.comments.create(comment_params)
-    @comment.user_id = current_user.id if current_user #assign the user id of the current user to the comment
+    @comment.user_id = current_user.id if current_user # assign the user id of the current user to the comment
     @comment.username = current_user.username
 
     if @comment.save
+        NewCommentMailer.new_comment(@comment).deliver_now # send email notification to owner of the original post
         flash[:success] = 'Comment Posted'
         redirect_to pet_report_path(@pet_report)
     else
@@ -16,6 +17,7 @@ def create
 end
 
 def update
+    # Could not get edit functionality to work for comments
     @pet_report = PetReport.find(params[:pet_report_id])
     @comment = @pet_report.comments.find(params[:id])
     if @comment.update(comment_params)
