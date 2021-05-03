@@ -14,7 +14,7 @@
     <%= f.hidden_field :image, value: @pet_report.cached_image_data %> <!--cache image data: prevents image being lost if form fails to upload (validation failure etc.)-->
     <%= f.file_field :image %>
     <p></p>
-    <%= f.input :additionalInfo, label:'Additional Info' %>
+    <%= f.input :additionalInfo, label:'Additional Info', placeholder: "include any other relevant info here such as pet's name, sex, temperment, are they microchipped etc." %>
   </div>
 
   <div class="form-actions">

@@ -1,11 +1,30 @@
 <div style="text-align: center">
-    <!--<h1 style="margin:50px">Welcome to Pet Rescue</h1>-->
-    <%= image_tag('welcome.png', style: "height: 250px; width: 250px") %>
-        <div>
-            <%= image_tag('mainLogo.png', style: "height: 270px; width: 270px") %>
-        </div>
-        <blockquote class="blockquote text-center">
+    <div>
+        <%= image_tag('mainLogo.png', style: "height: 260px; width: 260px") %>
+    </div>
+
+    <blockquote class="blockquote text-center", style="margin:2%;">
         <p class="mb-0">"The greatness of a nation can be judged by the way its animals are treated."</p>
         <footer class="blockquote-footer" style="margin:10px"><cite title="Source Title">Mahatma Gandhi</cite></footer>
     </blockquote>
+
+    <div style="margin:4%;">
+        <%= image_tag('welcome_sm.PNG') %>
     </div>
+
+</div>
+
+<!-- footer -->
+<div class='container', style='position:fixed; bottom:0;'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div style='width:100%; text-align:center; color:black; '>
+            PetRescue &copy 2021 All Rights Reserved
+        </div>
+        
+        <!-- facebook icon made by https://www.flaticon.com -->
+        <div style="float:right;">
+            <%= link_to image_tag('facebook.png', style:"height:40px; width:40px;"), "https://www.facebook.com/groups/2559346021036671" %>
+        </div>
+    </nav>
+</div>
+
