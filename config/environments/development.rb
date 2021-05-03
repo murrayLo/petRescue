@@ -74,5 +74,23 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   
+
+
+  # the following code was adapted from https://gist.github.com/chesnowitz/80458d4fd176de466d1f78f8f731284c
+  # this is the configuration for password recovery via email
+  # NOTE: ensure "Less Secure App Access" is turned ON in gmail sender account, or emails will not be sent
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "example.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    #username and password in application.yml, which is included in gitignore
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
+  }
+  # config.action_mailer.default_url_options = { host: 'http://37.228.243.49:3000' }
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
 end

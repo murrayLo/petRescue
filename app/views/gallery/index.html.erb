@@ -26,9 +26,9 @@
   <div class="card-body">
     <!--if user signed in allow view, otherwise redirect to log in-->
     <% if user_signed_in? %>
-      <%= link_to 'View', pet_report, class:"btn btn-outline-primary" %>
+      <%= link_to 'View', pet_report, class:"btn btn-outline-dark" %>
     <% else %>
-      <%= link_to 'View', new_user_session_path, class:"btn btn-outline-primary", data: { confirm: 'You must be logged in to view details' } %>
+      <%= link_to 'View', new_user_session_path, class:"btn btn-outline-dark", data: { confirm: 'You must be logged in to view details' } %>
     <% end %>
   </div>
 
