@@ -1,0 +1,17 @@
+<h1>
+Hey!
+
+Someone has left a comment on your PetRescue post: 
+</h1>
+
+<p>
+<b>
+  "<%= @comment.body %>"
+</b>
+</p>
+
+<p>
+  You can view and reply to this comment <%= link_to "here", pet_report_url(@pet_report) %>
+</p>
+
+<%= image_tag('mainLogo.png') %>
