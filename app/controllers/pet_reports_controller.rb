@@ -4,7 +4,8 @@ class PetReportsController < ApplicationController
   
   # GET /pet_reports or /pet_reports.json
   def index
-    @pet_reports = PetReport.all
+    #@pet_reports = PetReport.all
+    @pet_reports = PetReport.search(params[:search])
   end
 
   # GET /pet_reports/1 or /pet_reports/1.json

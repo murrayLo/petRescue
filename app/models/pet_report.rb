@@ -13,4 +13,13 @@ class PetReport < ApplicationRecord
     validates :colour, presence: true
     validates :image, presence: true
     validates :user_id, presence: true
+
+    #Search Function
+    def self.search(search)
+        if search
+            where(["breed LIKE ?","%#{search}%"])
+        else
+            all
+        end
+    end
 end
