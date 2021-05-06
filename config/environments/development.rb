@@ -86,7 +86,7 @@ Rails.application.configure do
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    #username and password in application.yml, which is included in gitignore
+    #username and password in application.yml, which is included in gitignore so credentials are not in public repo
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
   }
