@@ -1,0 +1,36 @@
+</br>
+<h2>Inbox</h2>
+</br>
+
+<%= link_to 'New Message', new_message_path, class:"btn btn-success" %>
+
+<p></p>
+<table class="table table-hover">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="row">Subject</th>
+      <th scope="row">From</th>
+      <th scope="row">Received</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <!-- only show messages sent to the current user -->
+      <% if message.username_to == current_user.username %>   
+        <tr class="table-light">
+          <td><%= message.subject %></td>
+          <td><%= message.username_from %></td>
+          <td><%= message.created_at %></td>
+          <td><%= link_to 'View', message, class:"btn btn-outline-dark" %></td>
+          <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'View Sent Messages', sentmessages_index_path, class:"btn btn-outline-dark" %>

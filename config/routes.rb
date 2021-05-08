@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  
   devise_for :users, controllers: { regitrations: 'user_registrations/registrations' } #specify user_registrations controller so Devise knows where to look
   get 'home/index'
   get 'gallery/index'
+  get 'sentmessages/index'
+  resources :messages
   resources :losts
   resources :founds
 

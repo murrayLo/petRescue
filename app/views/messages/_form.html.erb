@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@message) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :subject %>
+    <%= f.input :body, label: "Message" %>
+    <%= f.input :username_to, :collection => @user_names, include_blank: false, include_hidden: false, label: "Send To" %>
+    <%= hidden_field_tag :username_from, message.username_from %> <!-- hidden field to capture senders username -->
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success", value: "Send" %>
+    <%= link_to 'Return to Inbox', messages_path, class:"btn btn-outline-dark" %>
+  </div>
+<% end %>
