@@ -1,0 +1,19 @@
+
+<p></p>
+<h4 class="card-title"><%= @message.subject %></h4>
+<h6 class="card-subtitle mb-2 text-muted"><%= @message.created_at %></h6>
+<p></p>
+<div class="card text-black bg-light mb-3">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Sender: <%= @message.username_from %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">To: <%= @message.username_to %></h6>
+    </br>
+    <p class="card-text"><%= @message.body %></p>
+    <% if @message.username_to == current_user.username %> 
+      <%= link_to 'Reply', new_message_path, class:"btn btn-success" %>
+      <%= link_to 'Delete', @message, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>  
+    <% end %>
+  </div>
+</div>
+<p></p>
+<%= link_to 'Return to Inbox', messages_path, class:"btn btn-outline-dark" %>

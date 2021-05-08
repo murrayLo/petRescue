@@ -10,7 +10,7 @@
 
   </br>
 
-  <!--if user signed in allow report, otherwise redirect to log in-->
+  <!-- if user signed in allow report, otherwise redirect to log in -->
   <% if user_signed_in? %>
     <%= link_to 'Report a Lost or Found Pet', new_pet_report_path, class:"btn btn-outline-dark mr-auto" %>
   <% else %>
@@ -19,6 +19,7 @@
 
 </div>
 
+<!-- Display all missing reports -->
 <div style="text-align: center; ">
   <% @pet_reports.each do |pet_report| %>
     <div class="card mb-3" style="width: 18rem; display: inline-block; margin: 2%; ">
@@ -34,7 +35,7 @@
         </div>
 
         <div class="card-body">
-          <!--if user signed in allow view, otherwise redirect to log in-->
+          <!-- if user signed in allow to view, otherwise redirect to log in -->
           <% if user_signed_in? %>
             <%= link_to 'View', pet_report, class:"btn btn-outline-dark" %>
           <% else %>

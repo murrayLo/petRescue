@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :pet_reports
   has_many :comments
+  has_many :messages
   
 end
