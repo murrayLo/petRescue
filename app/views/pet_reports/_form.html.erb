@@ -7,8 +7,8 @@
     <%= f.input :reporting, :collection => %w[Missing Found Stolen] %>
     <%= f.input :date %>
     <%= f.input :location %>
-    <%= f.input :animal, :collection => %w[Dog Cat] %>
-    <%= f.input :breed %>
+    <%= f.input :animal, :collection => %w[Dog] %>
+    <%= f.input :breed, :collection => @breed_dog, include_blank: false %>
     <%= f.input :colour %>
     <%= image_tag f.object.image_url if f.object.cached_image_data %> <!--if image is cached, display it so user is aware-->
     <%= f.hidden_field :image, value: @pet_report.cached_image_data %> <!--cache image data: prevents image being lost if form fails to upload (validation failure etc.)-->

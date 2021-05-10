@@ -16,6 +16,14 @@ class PetReportsController < ApplicationController
   def new
     #@pet_report = PetReport.new
     @pet_report = current_user.pet_reports.build
+
+    @breed_dog = [] #create empty array
+    @breed_cat = [] #create empty array
+    @breeds = Breed.all #call breeds model
+    @breeds.each do |b| #loop through each breed in breeds
+      @breed_dog.push(b[:dogs]) #push each dog breed into the array
+      @breed_cat.push(b[:cats]) #push each cat breed into the array
+    end
   end
 
   # GET /pet_reports/1/edit
@@ -55,7 +63,7 @@ class PetReportsController < ApplicationController
   def destroy
     @pet_report.destroy
     respond_to do |format|
-      format.html { redirect_to pet_reports_url, notice: "Pet report was successfully destroyed." }
+      format.html { redirect_to gallery_index_url, notice: "Pet report was successfully destroyed." }
       format.json { head :no_content }
     end
   end
