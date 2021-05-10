@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <%= f.input :subject %>
     <%= f.input :body, label: "Message" %>
-    <%= f.input :username_to, :collection => @user_names, include_blank: false, include_hidden: false, label: "Send To" %>
+    <%= f.input :username_to, label: "Send To", :collection => @user_names, include_blank: 'Select User...' %>
     <%= hidden_field_tag :username_from, message.username_from %> <!-- hidden field to capture senders username -->
   </div>
 
