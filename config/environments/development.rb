@@ -77,7 +77,7 @@ Rails.application.configure do
 
 
   # the following code was adapted from https://gist.github.com/chesnowitz/80458d4fd176de466d1f78f8f731284c
-  # this is the configuration for password recovery via email
+  # this is the configuration for the mailer
   # NOTE: ensure "Less Secure App Access" is turned ON in gmail sender account, or emails will not be sent
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -90,7 +90,7 @@ Rails.application.configure do
     user_name: ENV["MAIL_USERNAME"],
     password: ENV["MAIL_PASSWORD"]
   }
-  # config.action_mailer.default_url_options = { host: 'http://37.228.243.49:3000' }
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+# config.action_mailer.default_url_options = { host: 'http://37.228.243.49:3000' }
+   
 end

@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = current_user.messages.build
-    @message.username_from = current_user.username
+    @message.username_from = current_user.username #assign current users username as the sender (username_from)
 
     # create list of users to select when sending a message
     @user_names = [] #create empty array
@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
   # POST /messages or /messages.json
   def create
     @message = current_user.messages.build(message_params)
-    @message.username_from = current_user.username
+    @message.username_from = current_user.username #assign current users username as the sender (username_from)
 
     respond_to do |format|
       if @message.save

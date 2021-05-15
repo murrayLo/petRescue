@@ -4,7 +4,6 @@ class PetReportsController < ApplicationController
   
   # GET /pet_reports or /pet_reports.json
   def index
-    #@pet_reports = PetReport.all
     @pet_reports = PetReport.search(params[:search])
   end
 
@@ -18,11 +17,9 @@ class PetReportsController < ApplicationController
     @pet_report = current_user.pet_reports.build
 
     @breed_dog = [] #create empty array
-    @breed_cat = [] #create empty array
     @breeds = Breed.all #call breeds model
     @breeds.each do |b| #loop through each breed in breeds
       @breed_dog.push(b[:dogs]) #push each dog breed into the array
-      @breed_cat.push(b[:cats]) #push each cat breed into the array
     end
   end
 
@@ -32,7 +29,6 @@ class PetReportsController < ApplicationController
 
   # POST /pet_reports or /pet_reports.json
   def create
-    #@pet_report = PetReport.new(pet_report_params)
     @pet_report = current_user.pet_reports.build(pet_report_params)
 
     respond_to do |format|
