@@ -1,5 +1,5 @@
 class NewCommentMailer < ApplicationMailer
-#Controller for comment mailer
+
   def new_comment(comment)
     @comment = comment
     @pet_report = @comment.pet_report
@@ -8,3 +8,5 @@ class NewCommentMailer < ApplicationMailer
     subject: "New Comment on Your PetRescue Post"
   end
 end
+
+#Controller for comment mailer

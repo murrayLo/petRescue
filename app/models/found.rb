@@ -6,5 +6,5 @@ class Found < ApplicationRecord
     validates :breed, presence: true
     validates :colour, presence: true
     validates :reporter, presence: true
-    # no need to validate image or additionalInfo, as these fields are not mandatory
+    # no need to validate additionalInfo as it is not mandatory
 end
