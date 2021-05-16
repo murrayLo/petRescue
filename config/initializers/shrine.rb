@@ -1,7 +1,10 @@
+# code in this file is auto generated when shrine installed
+
 require "shrine"
 require "shrine/storage/file_system"
 require "shrine/storage/memory"
 
+# following storage code based on tutorial at https://www.youtube.com/watch?v=mG1BUMuSmsc
 if Rails.env.test?
     Shrine.storages = { 
         cache: Shrine::Storage::Memory.new, # temporary 

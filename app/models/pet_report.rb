@@ -15,6 +15,7 @@ class PetReport < ApplicationRecord
     validates :user_id, presence: true
 
     #Search Function
+    #Code modified from https://www.youtube.com/watch?v=s88Uc0InOAM
     def self.search(search)
         if search
             where(["breed LIKE ?","%#{search}%"])
