@@ -10,6 +10,7 @@
     <%= f.input :animal, :collection => %w[Dog] %>
     <%= f.input :breed, :collection => @breed_dog, include_blank: false %>
     <%= f.input :colour %>
+    <!-- following image upload code has been modified from tutorial at https://www.youtube.com/watch?v=mG1BUMuSmsc-->
     <%= image_tag f.object.image_url if f.object.cached_image_data %> <!--if image is cached, display it so user is aware-->
     <%= f.hidden_field :image, value: @pet_report.cached_image_data %> <!--cache image data: prevents image being lost if form fails to upload (validation failure etc.)-->
     <%= f.file_field :image %>

@@ -1,3 +1,4 @@
+# code in comments controller modified from tutorial found at https://www.udemy.com/course/ruby-on-rails-for-beginners-step-by-step/learn/lecture/9012462#overview
 class CommentsController < ApplicationController
 before_action :authenticate_user!
 

@@ -1,3 +1,5 @@
+# code adjusted from https://www.youtube.com/watch?v=mG1BUMuSmsc
+
 require "image_processing/mini_magick"
 
 class ImageUploader < Shrine
